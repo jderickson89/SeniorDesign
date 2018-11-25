@@ -181,7 +181,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x156
+.text           0x00000000      0x212
  *(.vectors)
  .vectors       0x00000000       0xb4 D:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
                 0x00000000                __vector_default
@@ -283,13 +283,13 @@ END GROUP
                 0x000000c8                __vector_42
                 0x000000cc                . = ALIGN (0x2)
  *(.text.*)
- .text.main     0x000000cc       0x86 main.o
+ .text.main     0x000000cc      0x142 main.o
                 0x000000cc                main
-                0x00000152                . = ALIGN (0x2)
+                0x0000020e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000152        0x0 d:/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000152                _exit
-                0x00000152                exit
+ .fini9         0x0000020e        0x0 d:/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x0000020e                _exit
+                0x0000020e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -308,11 +308,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000152        0x4 d:/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000020e        0x4 d:/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000156                _etext = .
+                0x00000212                _etext = .
 
-.data           0x00800100        0x0 load address 0x00000156
+.data           0x00800100        0x0 load address 0x00000212
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -330,8 +330,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x00000156                __data_load_start = LOADADDR (.data)
-                0x00000156                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000212                __data_load_start = LOADADDR (.data)
+                0x00000212                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800100        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -410,20 +410,20 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xb34
+.debug_info     0x00000000      0xe6e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x8ea D:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
- .debug_info    0x000008ea      0x24a main.o
+ .debug_info    0x000008ea      0x584 main.o
 
-.debug_abbrev   0x00000000      0x972
+.debug_abbrev   0x00000000      0x980
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x86e D:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
- .debug_abbrev  0x0000086e      0x104 main.o
+ .debug_abbrev  0x0000086e      0x112 main.o
 
-.debug_line     0x00000000      0x349
+.debug_line     0x00000000      0x44c
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x1a5 D:/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328pb/avr5/crtatmega328pb.o
- .debug_line    0x000001a5      0x1a4 main.o
+ .debug_line    0x000001a5      0x2a7 main.o
 
 .debug_frame    0x00000000       0x24
  *(.debug_frame)
@@ -435,9 +435,9 @@ END GROUP
  .debug_str     0x00000318      0x1d4 main.o
                                 0x208 (size before relaxing)
 
-.debug_loc      0x00000000       0xec
+.debug_loc      0x00000000      0x49e
  *(.debug_loc)
- .debug_loc     0x00000000       0xec main.o
+ .debug_loc     0x00000000      0x49e main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -457,9 +457,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x10
+.debug_ranges   0x00000000       0x40
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x10 main.o
+ .debug_ranges  0x00000000       0x40 main.o
 
 .debug_macro
  *(.debug_macro)

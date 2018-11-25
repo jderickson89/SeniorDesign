@@ -1,15 +1,18 @@
 /*
  * Senior Design.c
+ * Single Motor Test Code
  *
  * Created: 11/18/2018 1:29:49 PM
  * Author : Derickson
  */ 
 
 // ------- Preamble -------- //
+
+#define F_CPU 8000000UL
+
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
-
 
 #define ENA 128;
 #define ENB 128;
@@ -53,12 +56,27 @@ int main(void){
 	motorInit();
 				
 	while(1){
+		for(int i = 0; i < 25 ; i++){
+			setBridgeState(1,0,1,0,32,32);
+			_delay_ms(25);
+			setBridgeState(0,1,1,0,32,32);
+			_delay_ms(25);
+			setBridgeState(0,1,0,1,32,32);
+			_delay_ms(25);		
+			setBridgeState(1,0,0,1,32,32);
+			_delay_ms(25);
+		}
 		
-		setBridgeState(1,0,0,0,128,255);
-		_delay_ms(2000);
-		setBridgeState(0,1,0,0,128,255);
-		_delay_ms(2000);
-		
+		for(int i = 0; i < 25 ; i++){
+			setBridgeState(0,1,0,1,32,32);
+			_delay_ms(25);
+			setBridgeState(0,1,1,0,32,32);
+			_delay_ms(25);
+			setBridgeState(1,0,1,0,32,32);
+			_delay_ms(25);
+			setBridgeState(1,0,0,1,32,32);
+			_delay_ms(25);
+		}
 	}
 	return(0);
 }
